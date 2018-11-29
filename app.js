@@ -20,7 +20,7 @@ function addTask(e) {
   // conditional for empty input
   if(taskInput.value === '') {
     alert('Please add a task!');
-  }
+  } else {
 
   // create li element for task
   const li = document.createElement('li');
@@ -42,6 +42,8 @@ function addTask(e) {
 
   // clear input value
   taskInput.value = '';
+
+  }
 
   // prevent default form submission
   e.preventDefault();
