@@ -8,7 +8,7 @@ const taskInput = document.querySelector('#task')
 //  CALL EVENT LISTENERS FUNCTION
 loadEventListeners();
 
-//  EVENT LISTENERS
+//  EVENT LISTENERS FUNCTION
 function loadEventListeners() {
   //add task
   form.addEventListener('submit', addTask);
