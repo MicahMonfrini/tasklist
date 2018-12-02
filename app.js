@@ -85,3 +85,9 @@ function clearTasks() {
   // set innerHTML to empty string
   // taskList.innerHTML = '';
 }
+
+// FILTER TASKS FUNCTION
+
+function filterTasks() {
+  
+}
