@@ -69,8 +69,17 @@ function removeTask(e) {
 
 // CLEAR TASKS FUNCTION
 
-function clearTasks(e) {
-  if (e.target.classList.contains('clear-tasks')) {
-    console.log("YARP");
+function clearTasks() {
+
+  // *OPTION 1* - while loop (better performance)
+
+  // loop through taskList as long as an item remains
+  while (taskList.firstChild) {
+    // remove items
+    taskList.removeChild(taskList.firstChild);
   }
+
+  // *OPTION 2* - innerHTML (less code)
+  // set innerHTML to empty string
+  // taskList.innerHTML = '';
 }
