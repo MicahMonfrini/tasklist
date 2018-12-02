@@ -69,3 +69,8 @@ function removeTask(e) {
 
 // CLEAR TASKS FUNCTION
 
+function clearTasks(e) {
+  if (e.target.classList.contains('clear-tasks')) {
+    console.log("YARP");
+  }
+}
