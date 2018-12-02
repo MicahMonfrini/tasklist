@@ -54,5 +54,13 @@ function addTask(e) {
 // REMOVE TASK FUNCTION
 
 function removeTask(e) {
-  
+  // Variable for entire task item (a tag)
+  const task = e.target.parentElement;
+  // check task for delete item class and remove
+  if (task.classList.contains('delete-item')) {
+    // confirm y/n
+    if (confirm('Are You Sure?')) {
+      task.parentElement.remove();
+    }
+  }
 }
