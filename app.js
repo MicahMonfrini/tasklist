@@ -12,6 +12,8 @@ loadEventListeners();
 function loadEventListeners() {
   //add task
   form.addEventListener('submit', addTask);
+  // remove task
+  taskList.addEventListener('click', removeTask);
 }
 
 //  ADD TASK FUNCTION
@@ -43,8 +45,14 @@ function addTask(e) {
   // clear input value
   taskInput.value = '';
 
-  }
-
   // prevent default form submission
   e.preventDefault();
+
+  }
+}
+
+// REMOVE TASK FUNCTION
+
+function removeTask(e) {
+  
 }
