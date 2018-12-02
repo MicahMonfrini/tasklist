@@ -10,10 +10,12 @@ loadEventListeners();
 
 //  EVENT LISTENERS FUNCTION
 function loadEventListeners() {
-  //add task
+  // add task
   form.addEventListener('submit', addTask);
-  // remove task
+  // remove individual task
   taskList.addEventListener('click', removeTask);
+  // clear all tasks
+  clearBtn.addEventListener('click', clearTasks)
 }
 
 //  ADD TASK FUNCTION
@@ -64,3 +66,6 @@ function removeTask(e) {
     }
   }
 }
+
+// CLEAR TASKS FUNCTION
+
