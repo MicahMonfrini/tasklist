@@ -2,7 +2,7 @@
 const form = document.querySelector('#task-form')
 const taskList = document.querySelector('.collection')
 const clearBtn = document.querySelector('.clear-tasks')
-const filter = document.querySelector('#input-field')
+const filter = document.querySelector('#filter')
 const taskInput = document.querySelector('#task')
 
 //  CALL EVENT LISTENERS FUNCTION
@@ -15,9 +15,9 @@ function loadEventListeners() {
   // remove individual task
   taskList.addEventListener('click', removeTask);
   // clear all tasks
-  clearBtn.addEventListener('click', clearTasks)
+  clearBtn.addEventListener('click', clearTasks);
   // filter tasks
-  filter.addEventListener('keyup', filterTasks)
+  filter.addEventListener('keyup', filterTasks);
 }
 
 //  ADD TASK FUNCTION
@@ -88,6 +88,22 @@ function clearTasks() {
 
 // FILTER TASKS FUNCTION
 
-function filterTasks() {
+function filterTasks(e) {
+  // input text
+  const text = e.target.value.toLowerCase();
   
+  // loop over each task in the list
+  document.querySelectorAll('.collection-item').forEach((task) => {
+
+    // text content of each task
+    const item = task.textContent;
+    // check for any match between input text and task text
+    // show tasks that match
+    if (item.toLowerCase().indexOf(text) !== -1) {
+      task.style.display = 'block';
+    // hide tasks that don't match
+    } else {
+      task.style.display = 'none';
+    }
+  })
 }
