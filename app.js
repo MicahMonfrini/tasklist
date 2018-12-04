@@ -69,9 +69,19 @@ function removeTask(e) {
   if (task.classList.contains('delete-item')) {
     // confirm y/n
     if (confirm('Are You Sure?')) {
+      // remove from DOM
       task.parentElement.remove();
+
+      // remove from LS
+      removeFromLS(task.parentElement);
     }
   }
+}
+
+// REMOVE FROM LS FUNCTION
+
+function removeFromLS(taskItem) {
+  console.log(taskItem);
 }
 
 // CLEAR TASKS FUNCTION
