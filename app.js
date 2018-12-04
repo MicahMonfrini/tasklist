@@ -113,3 +113,9 @@ function filterTasks(e) {
 
 // STORE TASK FUNCTION
 
+function storeTask(task) {
+  let tasks;
+  if (localStorage.getItem('tasks') === null) {
+    tasks = [];
+  }
+}
