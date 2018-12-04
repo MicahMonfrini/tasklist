@@ -10,6 +10,8 @@ loadEventListeners();
 
 //  EVENT LISTENERS FUNCTION
 function loadEventListeners() {
+  // retreive tasks from local storage on DOM load
+  document.addEventListener('DOMContentLoaded', getTasks)
   // add task
   form.addEventListener('submit', addTask);
   // remove individual task
@@ -130,4 +132,10 @@ function storeTask(task) {
 
   // update tasks array in local storage (must convert into a string)
   localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+// GET TASKS FUNCTION
+
+function getTasks(){
+  
 }
