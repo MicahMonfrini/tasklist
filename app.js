@@ -121,6 +121,15 @@ function clearTasks() {
   // *OPTION 2* - innerHTML (less code)
   // set innerHTML to empty string
   // taskList.innerHTML = '';
+
+  // Clear all tasks from LS
+  clearFromLS()
+}
+
+// CLEAR FROM LS FUNCTION
+
+function clearFromLS() {
+  
 }
 
 // FILTER TASKS FUNCTION
