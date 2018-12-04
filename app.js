@@ -81,7 +81,29 @@ function removeTask(e) {
 // REMOVE FROM LS FUNCTION
 
 function removeFromLS(taskItem) {
-  console.log(taskItem);
+  // initialize tasks variable
+  let tasks;
+  // check to see if there are any tasks in LS
+  if (localStorage.getItem('tasks') === null) {
+    // if not, set tasks to an empty array
+    tasks = [];
+  } else {
+    // if so, parse the tasks (stored as strings) and set tasks to whatever is in LS 
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  // loop through tasks in LS
+  tasks.forEach((task, index) => {
+    // check to see if the taskItem selected for removal matches the current iteration
+    if (taskItem.textContent === task) {
+      // if so, remove that task from the tasks array
+      tasks.splice(index, 1);
+    }
+  })
+
+  // update tasks array in local storage (must convert into a string)
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+
 }
 
 // CLEAR TASKS FUNCTION
