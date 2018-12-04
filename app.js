@@ -123,7 +123,7 @@ function storeTask(task) {
     // if not, set tasks to an empty array
     tasks = [];
   } else {
-    // if so, retrieve and parse the tasks (stored as strings) into array 
+    // if so, parse the tasks (stored as strings) and set tasks to whatever is in LS
     tasks = JSON.parse(localStorage.getItem('tasks'));
   }
 
@@ -137,5 +137,35 @@ function storeTask(task) {
 // GET TASKS FUNCTION
 
 function getTasks(){
-  
+  // initialize tasks variable
+  let tasks;
+  // check to see if there are any tasks in LS
+  if (localStorage.getItem('tasks') === null) {
+    // if not, set tasks to an empty array
+    tasks = [];
+  } else {
+    // if so, parse the tasks (stored as strings) and set tasks to whatever is in LS 
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  // loop through tasks in LS and create DOM elements for each one
+  tasks.forEach((task) => {
+    // create li element for task
+    const li = document.createElement('li');
+    // cdd class to li
+    li.className = 'collection-item';
+    // create text node and append to li
+    li.appendChild(document.createTextNode(task));
+    // create new link element
+    const link = document.createElement('a');
+    // add class to link element
+    link.className = 'delete-item secondary-content';
+    // add icon html
+    link.innerHTML = '<i class="fa fa-remove"></i>';
+    // append link to li
+    li.appendChild(link);
+
+    // append li to ul
+    taskList.appendChild(li);
+  })
 }
