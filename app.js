@@ -129,7 +129,7 @@ function clearTasks() {
 // CLEAR FROM LS FUNCTION
 
 function clearFromLS() {
-  
+  localStorage.clear();
 }
 
 // FILTER TASKS FUNCTION
