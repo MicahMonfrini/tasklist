@@ -113,17 +113,18 @@ function clearTasks() {
   // *OPTION 1* - while loop (better performance)
 
   // loop through taskList as long as an item remains
-  while (taskList.firstChild) {
-    // remove items
-    taskList.removeChild(taskList.firstChild);
+  if (confirm('Delete all tasks?')) {
+    while (taskList.firstChild) {
+      // remove items
+      taskList.removeChild(taskList.firstChild);
+      // Clear all tasks from LS
+      clearFromLS()
+    }
   }
 
   // *OPTION 2* - innerHTML (less code)
   // set innerHTML to empty string
   // taskList.innerHTML = '';
-
-  // Clear all tasks from LS
-  clearFromLS()
 }
 
 // CLEAR FROM LS FUNCTION
