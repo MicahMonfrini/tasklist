@@ -46,6 +46,9 @@ function addTask(e) {
   // append li to ul
   taskList.appendChild(li);
 
+  // store task in local storage
+  storeTask(taskInput.value);
+
   // clear input value
   taskInput.value = '';
 
@@ -107,3 +110,6 @@ function filterTasks(e) {
     }
   })
 }
+
+// STORE TASK FUNCTION
+
