@@ -114,14 +114,20 @@ function filterTasks(e) {
 // STORE TASK FUNCTION
 
 function storeTask(task) {
+  // initialize tasks variable
   let tasks;
+  // check to see if there are any tasks in local storage
   if (localStorage.getItem('tasks') === null) {
+    // if not, set tasks to an empty array
     tasks = [];
   } else {
+    // if so, retrieve and parse the tasks (stored as strings) into array 
     tasks = JSON.parse(localStorage.getItem('tasks'));
   }
 
+  // push the new task onto the tasks array
   tasks.push(task);
 
+  // update tasks array in local storage (must convert into a string)
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
