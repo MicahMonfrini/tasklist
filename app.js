@@ -111,9 +111,10 @@ function removeFromLS(taskItem) {
 function clearTasks() {
 
   // *OPTION 1* - while loop (better performance)
-
-  // loop through taskList as long as an item remains
+  
+  // confirm y/n
   if (confirm('Delete all tasks?')) {
+    // loop through taskList as long as an item remains
     while (taskList.firstChild) {
       // remove items
       taskList.removeChild(taskList.firstChild);
