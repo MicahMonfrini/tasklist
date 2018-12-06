@@ -1,1 +1,24 @@
-# tasklist
+## Takeaways:
+
+- Recognizing which DOM elements you'll need to interact with before beginning the project is important
+- Place these DOM elements into variables
+- A "master" function that manages all of your event listeners is necessary
+- These event listeners call the individual functions for each specific piece of functionality
+	- ex: `form.addEventListener('submit', addTask);`
+- `appendChild` is useful when adding items to a list
+- Use `e.preventDefault();` to prevent default functionality (in forms for example)
+- Always remember which element matters the most!
+	- ex: Removing a task requires targeting the link element, not the `li` element
+- Data stored in local storage is stored as string. Must parse when retrieving the data
+	- ex: `tasks  =  JSON.parse(localStorage.getItem('tasks'));`
+- Likewise, data must be converted to a string when stored in LS
+	- ex: `localStorage.setItem('tasks', JSON.stringify(tasks));`
+- You can use the `index` argument when looping through an array with `forEach()` to target specific items in an array
+- Using a while loop and `.removeChild()` to clear the task list results in better performance
+- Setting the `innerHTML` to an empty string uses less code and is more straight forward
+- When managing input data, use `.toLowerCase()`
+- `.indexOf()` is used when filtering through a list
+	- ex: `if (item.toLowerCase().indexOf(text) !==  -1)`
+	- -1 means the data doesn't exist 
+	- !== means "not equal to"
+	- Basically, this code literally says "if the input data is present". Two negatives make a positive!
